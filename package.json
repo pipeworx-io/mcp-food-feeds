@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-food-feeds",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Food Feeds MCP.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-food-feeds": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "food-feeds"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-food-feeds.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/food-feeds",
   "pipeworx": {
-    "sourceHash": "v1-d5825d7ace3f01f59ba6ec715b5ef1d0f26eb1b1a5a17b9356f486a4f5d726ea",
-    "sourceCommit": "445bacc5596a845c12d6945fbfcdf330ef60dcc4"
+    "mode": "gateway",
+    "slug": "food-feeds",
+    "gatewaySlug": "food-feeds",
+    "sourceHash": "v1-f183da9d184108b0538b2621e3014dfe2f0cbda14b68757504107b6ddbc8c2c6",
+    "sourceCommit": "bb047243cf27f32453103de186b8e6a8b6a1ce79"
   }
 }
